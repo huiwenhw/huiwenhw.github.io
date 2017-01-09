@@ -20,9 +20,9 @@
 
 		<div class="container-fluid">
 			<ul class="nav nav-pills nav-justified">
-				<li class="active"><a href="/">About</a></li>
-				<li><a href="{{ site.baseurl }}{% link posts.html %}">Posts</a></li>
-				<li><a href="{{ site.baseurl }}{% link photodiary.html %}">Photo Diary</a></li>
+				<li {% if page.url == '/' %} class="navactive"{% endif %}><a href="/">About</a></li>
+				<li {% if page.url == '/posts.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link posts.html %}">Posts</a></li>
+				<li {% if page.url == '/photodiary.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link photodiary.html %}">Photo Diary</a></li>
 			</ul>
 		</div>
 

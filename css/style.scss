@@ -52,21 +52,25 @@ a:focus {
 
 .nav-pills {
 	margin: 20px 0px;
+
+	.navactive {
+		a {
+			background-color: lightskyblue;
+			color: white;
+		}
+	}
+
+	a {
+		color: black;
+	}
 }
 
 .photos-parent {
 	text-align: center;
 
 	.photos {
-		height: 600px;
+		height: 500px;
 		margin: auto;
-		image-orientation: from-image;
-	}
-
-	.rotate {
-		-ms-transform: rotate(90deg); /* IE 9 */
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		transform: rotate(90deg);
 	}
 }
 

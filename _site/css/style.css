@@ -29,19 +29,17 @@ a:focus {
 
 .nav-pills {
   margin: 20px 0px; }
+  .nav-pills .navactive a {
+    background-color: lightskyblue;
+    color: white; }
+  .nav-pills a {
+    color: black; }
 
 .photos-parent {
   text-align: center; }
   .photos-parent .photos {
-    height: 600px;
-    margin: auto;
-    image-orientation: from-image; }
-  .photos-parent .rotate {
-    -ms-transform: rotate(90deg);
-    /* IE 9 */
-    -webkit-transform: rotate(90deg);
-    /* Chrome, Safari, Opera */
-    transform: rotate(90deg); }
+    height: 500px;
+    margin: auto; }
 
 .posts {
   list-style-type: none;
