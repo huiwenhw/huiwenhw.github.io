@@ -7,44 +7,73 @@
   src: url("fonts/GreatVibes-Regular.woff2") format("woff2"), url("fonts/GreatVibes-Regular.ttf") format("truetype"), url("fonts/GreatVibes-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-body, html {
-  font-family: 'Roboto';
-  padding-left: 30px;
-  padding-right: 30px; }
+@media (max-width: 768px) {
+  body, html {
+    font-family: 'Roboto';
+    padding: 5px;
+    margin: 0px; }
 
+  h2 {
+    margin: 0px; } }
+@media (min-width: 769px) {
+  body, html {
+    font-family: 'Roboto';
+    padding-left: 30px;
+    padding-right: 30px; } }
 a:focus {
   outline: none; }
 
-.header {
-  margin: 20px 0px; }
-  .header a, .header a:hover {
-    text-decoration: none;
-    color: black; }
-  .header h1 {
-    font-family: 'GreatVibes', 'Roboto';
-    font-size: 100px;
-    text-align: center;
-    font-weight: lighter;
-    margin: 0px; }
+@media (max-width: 768px) {
+  .header {
+    margin: 20px 0px 10px 0px; }
+    .header h1 {
+      font-size: 40px; } }
+@media (min-width: 768px) {
+  .header {
+    margin: 20px 0px; }
+    .header h1 {
+      font-size: 100px; } }
+.header a, .header a:hover {
+  text-decoration: none;
+  color: black; }
+.header h1 {
+  font-family: 'GreatVibes', 'Roboto';
+  text-align: center;
+  font-weight: lighter;
+  margin: 0px; }
 
-.nav-pills {
-  margin: 20px 0px; }
-  .nav-pills .navactive a {
-    background-color: lightskyblue;
-    color: white; }
-  .nav-pills a {
-    color: black; }
+@media (max-width: 768px) {
+  .nav-pills, .nav-justified {
+    margin: 0px 0px 20px 0px; }
+    .nav-pills li, .nav-justified li {
+      float: left;
+      display: table-cell;
+      width: 30%; } }
+@media (min-width: 768px) {
+  .nav-pills, .nav-justified {
+    margin: 20px 0px; } }
+.nav-pills .navactive a, .nav-justified .navactive a {
+  background-color: lightskyblue;
+  color: white; }
+.nav-pills a, .nav-justified a {
+  color: black; }
 
 .photos-parent {
   text-align: center; }
+  @media (max-width: 768px) {
+    .photos-parent .photos {
+      height: 200px; } }
+  @media (min-width: 768px) {
+    .photos-parent .photos {
+      height: 500px; } }
   .photos-parent .photos {
-    height: 500px;
     margin: auto; }
 
 .posts {
   list-style-type: none;
   text-align: center;
-  font-size: 20px; }
+  font-size: 20px;
+  padding: 0px; }
   .posts a {
     color: #0abab5; }
   .posts a:hover {
