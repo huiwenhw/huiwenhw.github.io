@@ -34,6 +34,12 @@ $tiffany: #0abab5;
 	h2 {
 		margin: 0px;
 	}
+
+	.main-container {
+		margin-right: 25px;
+		margin-left: 25px;
+		margin-top: 10px;
+	}
 }
 
 @media (min-width: 769px) {
@@ -42,6 +48,12 @@ $tiffany: #0abab5;
 		font-weight: 900;
 		padding-left: 30px;
 		padding-right: 30px;
+	}
+
+	.main-container {
+		margin-right: 50px;
+		margin-left: 50px;
+		margin-top: 20px;
 	}
 }
 
@@ -83,7 +95,7 @@ a:focus {
 		li {
 			float: left;
 			display: table-cell;
-			width: 30%;
+			width: 45%;
 		}
 	}
 
@@ -104,19 +116,18 @@ a:focus {
 }
 
 .photos-parent {
-	text-align: center;
-
-	@media (max-width: 768px) {
-		.photos {
+	.photos {
+		@media (max-width: 768px) {
 			height: 200px;
 		}
-	}
 
-	@media (min-width: 768px) {
-		.photos {
+		@media (min-width: 768px) {
 			height: 500px;
 		}
 	}
+
+	text-align: center;
+
 	.photos {
 		margin: auto;
 	}
@@ -136,5 +147,25 @@ a:focus {
 	a:hover {
 		background-color: $lightgrey;
 		text-decoration: none;
+	}
+}
+
+.randomthoughts {
+	list-style-type: none;
+	padding: 0px;
+
+	.title p {
+		color: $tiffany;
+		font-size: 15px;
+		text-align: left;
+		margin: 0px 0px 10px 0px;
+	}
+
+	.posts {
+		font-size: 14px;
+
+		p {
+			text-align: left;
+		}
 	}
 }

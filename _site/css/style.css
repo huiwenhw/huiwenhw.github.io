@@ -15,13 +15,23 @@
     margin: 0px; }
 
   h2 {
-    margin: 0px; } }
+    margin: 0px; }
+
+  .main-container {
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 10px; } }
 @media (min-width: 769px) {
   body, html {
     font-family: 'Roboto';
     font-weight: 900;
     padding-left: 30px;
-    padding-right: 30px; } }
+    padding-right: 30px; }
+
+  .main-container {
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 20px; } }
 a:focus {
   outline: none; }
 
@@ -50,7 +60,7 @@ a:focus {
     .nav-pills li, .nav-justified li {
       float: left;
       display: table-cell;
-      width: 30%; } }
+      width: 45%; } }
 @media (min-width: 768px) {
   .nav-pills, .nav-justified {
     margin: 20px 0px; } }
@@ -82,3 +92,16 @@ a:focus {
   .posts a:hover {
     background-color: #e9e9e9;
     text-decoration: none; }
+
+.randomthoughts {
+  list-style-type: none;
+  padding: 0px; }
+  .randomthoughts .title p {
+    color: #0abab5;
+    font-size: 15px;
+    text-align: left;
+    margin: 0px 0px 10px 0px; }
+  .randomthoughts .posts {
+    font-size: 14px; }
+    .randomthoughts .posts p {
+      text-align: left; }
