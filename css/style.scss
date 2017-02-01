@@ -48,6 +48,8 @@ $tiffany: #0abab5;
 		font-weight: 900;
 		padding-left: 30px;
 		padding-right: 30px;
+		max-width: 1200px;
+		margin: auto;
 	}
 
 	.main-container {
@@ -148,6 +150,10 @@ a:focus {
 		background-color: $lightgrey;
 		text-decoration: none;
 	}
+}
+
+.postexcerpt {
+	font-size: 15px;
 }
 
 .randomthoughts {
