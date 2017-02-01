@@ -20,10 +20,10 @@
 
 		<div class="container-fluid">
 			<ul class="nav nav-pills nav-justified">
-				<li {% if page.url == '/' %} class="navactive"{% endif %}><a href="/">About</a></li>
-				<li {% if page.url == '/randomthoughts.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link randomthoughts.html %}">Random Thoughts</a></li>
-				<li {% if page.url == '/posts.html' or page.url == '/posts/' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link posts.html %}">Posts</a></li>
-				<li {% if page.url == '/photodiary.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link photodiary.html %}">Photo Diary</a></li>
+				<li {% if page.url == '/blog/' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link blog/index.html %}">About</a></li>
+				<li {% if page.url == '/blog/randomthoughts.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link blog/randomthoughts.html %}">Random Thoughts</a></li>
+				<li {% if page.url == '/blog/posts.html' or page.url == '/posts/' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link blog/posts.html %}">Posts</a></li>
+				<li {% if page.url == '/blog/photodiary.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link blog/photodiary.html %}">Photo Diary</a></li>
 			</ul>
 		</div>
 
