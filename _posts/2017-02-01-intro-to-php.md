@@ -17,7 +17,7 @@ Syntax: Requires ; at end of every line
 Comments: Using // 
 
 <br>
-Echo(output), concatenation(.), $variables, conditional statements 
+<p> Echo(output), concatenation(.), $variables, conditional statements </p>
 ```
 <?php
 	echo "I'm learning" . " " . "PHP!";
@@ -33,8 +33,7 @@ Echo(output), concatenation(.), $variables, conditional statements
 ?>
 ```
 <br>
-
-Switch Statements 
+<p> Switch Statements </p>
 ```
 <?php 
 	case $i = 5;
@@ -53,8 +52,7 @@ Switch Statements
 ?>
 ```
 <br>
-
-Array. Init, modify + echo with [] & {}
+<p> Array. Init, modify + echo with [] & {} </p>
 ```
 <?php 
 	$snacks = array("potato chips", "jagabee");
@@ -67,8 +65,7 @@ Array. Init, modify + echo with [] & {}
 ?>
 ```
 <br>
-
-For loops & ForEach (loops + arrays)
+<p> For loops & ForEach (loops + arrays) </p>
 ```
 <?php
 	// For loops
@@ -85,8 +82,7 @@ For loops & ForEach (loops + arrays)
 ?>
 ```
 <br>
-
-While Loops: Checks cond first 
+<p> While Loops: Checks cond first </p>
 ```
 <?php 
 	$loopCond = true;
@@ -97,8 +93,7 @@ While Loops: Checks cond first
 ?>
 ```
 <br>
-
-Do-While Loops: Checks cond aft each iteration 
+<p> Do-While Loops: Checks cond aft each iteration </p>
 ```
 <?php
 	$loopCond = false;
@@ -108,8 +103,7 @@ Do-While Loops: Checks cond aft each iteration
 ?>
 ```
 <br>
-
-Functions: String 
+<p> Functions: String </p>
 ```
 <?php
 	$name = "huiwen";
@@ -129,8 +123,7 @@ Functions: String
 ?>
 ```
 <br>
-
-Functions: Math
+<p> Functions: Math </p>
 ```
 <?php
 	// Rounding number to int/decimal place. output: 3 & 3.142 
@@ -143,8 +136,7 @@ Functions: Math
 ?>
 ```
 <br>
-
-Functions: Array 
+<p> Functions: Array </p>
 ```
 <?php
 	// Pushing elements into array
@@ -164,8 +156,7 @@ Functions: Array
 ?>
 ```
 <br>
-
-Writing our own functions
+<p> Writing our own functions </p>
 ```
 <?php
 	function aboutMe($name, $age) {
@@ -175,3 +166,4 @@ Writing our own functions
 	// output: Hello! My name is hw, and I am 23 years old.
 ?>
 ```
+<br>
