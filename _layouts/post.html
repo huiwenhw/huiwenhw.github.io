@@ -2,5 +2,17 @@
 layout: default
 ---
 
+<!--
 <div class="posts"><a href="#"> {{ page.date | date: '%d %B %Y' }} | {{ page.title }} </a></div>
+-->
+<div id="post-header">
+	<h2>{{ page.title }}</h2>
+	<h4>{{ page.date | date: '%d %B %Y' }}</h4>
+</div>
+
 {{ content }}
+
+<div id="signoff">
+<p> ♡, </p>
+<p> Hui Wen </p>
+</div>

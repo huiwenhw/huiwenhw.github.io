@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+		<!-- Bootstrap -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="/css/style.css" type="text/css"/>
+		<title>Huiwen</title>
+	</head>
+	<body>
+		<!-- Header -->
+		<div class="header">
+			<a href="/" id="logo"><h1> Hui Wen </h1></a>
+		</div>
+
+<!--
+			<a href="javascript:void(0);" id="hamburger" onclick="showHam()">&#9776;</a>
+		<div class="">
+			<ul class="navbar" id="nav">
+				<li ><a href="/">About</a></li>
+				<li ><a href="/posts.html">Posts</a></li>
+				<li ><a href="/photodiary.html">Photo Diary</a></li>
+			</ul>
+		</div>
+-->
+				<!-- <li ><a href="/randomthoughts.html">Random Thoughts</a></li> -->
+
+		<div class="main-container">
+			<!--
+<div class="posts"><a href="#"> 24 March 2017 | Setting up site using Jekyll & Github pages </a></div>
+-->
+<div id="post-header">
+	<h2>Setting up site using Jekyll & Github pages</h2>
+	<h4>24 March 2017</h4>
+</div>
+
+<p>I’m assuming that you know Git, Github &amp; Github pages! If you don’t, <a href="http://jmcglone.com/guides/github-pages/">here’s</a> a pretty good site to get you started (:</p>
+
+<p>Soo let’s start!! There’re a few things we need to do:</p>
+<ol>
+  <li>Create a github page</li>
+  <li>Set up Jekyll</li>
+  <li>Add HTTPS to our site</li>
+</ol>
+
+<p>P.S. I like to use the terminal, so everything’s done using commands :D</p>
+
+<h3 id="1-create-a-github-page-reference">1. Create a github page <a href="https://pages.github.com/">(Reference)</a></h3>
+<p>Github pages is a …</p>
+<ol>
+  <li>Create a github repo, with the repo name as username.github.io (so mine’s huiwenhw.github.io)</li>
+  <li>Clone the repository
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/username/username.github.io
+</code></pre>
+    </div>
+  </li>
+  <li>Go into the repo folder &amp; create a index.html file (which is the default page for your site)
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ cd username.github.io
+$ echo "Hello World" &gt; index.html
+</code></pre>
+    </div>
+  </li>
+  <li>Add, commit &amp; push your “Hello World”!
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ git add --all
+$ git commit -m "Initial commit"
+$ git push -u origin master
+</code></pre>
+    </div>
+  </li>
+  <li>Head on to http://username.github.io! You’ll see a ‘Hello World’ printed on the page.</li>
+</ol>
+
+<h3 id="2-set-up-jekyll">2. Set up Jekyll</h3>
+<p>Jekyll is a static site generator. Simply put, static site generators takes the content we give it &amp; outputs it on the screen. There’s no dynamic interaction such as requesting for files etc. and is really useful for simple sites like a blog. If you’re interested to know <a href="https://davidwalsh.name/introduction-static-site-generators">more</a>.<br />
+<br />
+To install jekyll, do</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># Install Jekyll and Bundler gems through RubyGems
+$ gem install jekyll bundler 
+
+# Create a new Jekyll site at ./mysite
+$ jekyll new mysite
+
+# cd into our new directory
+$ cd mysite
+
+# Build the site &amp; serve it. This will serve our site at localhost:4000. Hop on over to see the generated site! 
+/mysite $ bundle exec jekyll serve 
+</code></pre>
+</div>
+<p>Your newly generated site will look something like this:</p>
+<figure>
+<img class="jekylldir" src="/../images/jekyll_gensite.png" alt="Jekyll's Generated Site" />
+</figure>
+<p><br />
+After the commands above, this is what you’ll see in your directory</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ls
+$ Gemfile, _config.yml, _site, index.md, Gemfile.lock, _posts, about.md
+</code></pre>
+</div>
+<p><br />
+Jekyll follows a directory structure, such as the one shown below, so its good to get to know what’s going on before we get started.</p>
+<figure>
+<img class="jekylldir" src="/../images/jekyll_dir.png" alt="Jekyll's Directory" />
+</figure>
+<ul>
+  <li>_drafts: Contains posts which we do not want to post / show on our site yet</li>
+  <li>_includes: The partials that we can use in our layout</li>
+  <li>_layouts: Consists of the templates that wrap posts</li>
+  <li>_posts: The content of our page! Format has to be in: YEAR-MONTH-DAY-title.md/html/whateveryoulike</li>
+  <li>_sass: Sass partials that can be imported to main.scss while will be processed into main.css for our site</li>
+  <li>_site: Folder where our generated site will be stored! Don’t touch this folder</li>
+  <li>index.html: Where our template for the index page goes</li>
+</ul>
+
+<p>Okay, now that we roughly know where our stuffs should go, its time to start building the structure. I didn’t really like the template that jekyll had, so I created my own template &amp; styles. The first thing we wanna do is to create the base template for our site. Soo let’s go and create a _layouts folder and add a default.html inside. You can name the file anything you like!</p>
+
+<p>In this file, write the template you want for your home page. I’ll put a simple example below:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>Huiwen<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main-container"</span><span class="nt">&gt;</span>
+		{'{ content }}
+	<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>Now, we have a default layout that we can use on every page! yay! What does this mean? It means we can now include this (which is also called the front matter):</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout: default
+---
+</code></pre>
+</div>
+<p>in our index.html and it will render the layout we had in _layouts/default.html. Whatever content that you put below the front matter will be rendered into the content tags that we wrote in _layouts/defaults.html.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout: default
+---
+&lt;ul&gt;
+	
+		&lt;li&gt;  
+			&lt;a href="/normal/2017/03/24/Settingup.html"&gt;Setting up site using Jekyll &amp; Github pages&lt;/a&gt;
+		&lt;/li&gt;           
+	
+		&lt;li&gt;  
+			&lt;a href="/normal/2017/03/08/rails-lingo.html"&gt;Creating multiple todo-lists in Rails&lt;/a&gt;
+		&lt;/li&gt;           
+	
+		&lt;li&gt;  
+			&lt;a href="/normal/2017/02/18/react-draggable-todolist.html"&gt;Intro to React&lt;/a&gt;
+		&lt;/li&gt;           
+	
+		&lt;li&gt;  
+			&lt;a href="/normal/2017/02/01/intro-to-php.html"&gt;Intro to PHP&lt;/a&gt;
+		&lt;/li&gt;           
+	
+		&lt;li&gt;  
+			&lt;a href="/normal/2017/01/12/misses.html"&gt;Missing the Valley&lt;/a&gt;
+		&lt;/li&gt;           
+	
+		&lt;li&gt;  
+			&lt;a href="/normal/2017/01/11/hello.html"&gt;Hello&lt;/a&gt;
+		&lt;/li&gt;           
+	      
+&lt;/ul&gt;   
+</code></pre>
+</div>
+
+
+<div id="signoff">
+<p> ♡, </p>
+<p> Hui Wen </p>
+</div>
+ 
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>

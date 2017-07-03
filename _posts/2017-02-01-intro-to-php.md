@@ -2,7 +2,6 @@
 layout: post
 title: Intro to PHP 
 category: normal
-permalink: /posts/
 ---
   
 Had to read a bunch of PHP codes for one of my modules, so I decided to learn the basics of PHP from codecademy! Jotting down the syntax here. 
@@ -75,10 +74,10 @@ Comments: Using //
 
 	// ForEach 
 	$numbers = array(1, 2, 3, 4, 5);
-	foreach($numbers as $num) {
+	foreach($numbers as $num) { *or* foreach($numbers as $num): 
 		echo $num . " ";
 		// output = 1 2 3 4 5 
-	}
+	} *or* endforeach;
 ?>
 ```
 <br>
@@ -167,3 +166,19 @@ Comments: Using //
 ?>
 ```
 <br>
+<p> Objects in PHP: Object Oriented Programming </p>
+<p> Class; instance; methods; object; Properties: pieces of data bound to an object </p>
+```
+<?php
+	// Creating a class 
+	class Person {
+		// adding properties 
+		public $isAlive = true;
+		public $name; 
+	}
+
+	// Creating an instance
+	$student = new Person();
+	print $student->isAlive;	// output: 1
+?>
+/``

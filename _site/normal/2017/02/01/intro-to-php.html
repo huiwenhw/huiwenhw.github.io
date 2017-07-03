@@ -13,22 +13,30 @@
 	<body>
 		<!-- Header -->
 		<div class="header">
-			<a href="/">
-				<h1> Hui Wen </h1>
-			</a>
+			<a href="/" id="logo"><h1> Hui Wen </h1></a>
 		</div>
 
-		<div class="container-fluid">
-			<ul class="nav nav-pills nav-justified">
+<!--
+			<a href="javascript:void(0);" id="hamburger" onclick="showHam()">&#9776;</a>
+		<div class="">
+			<ul class="navbar" id="nav">
 				<li ><a href="/">About</a></li>
-				<!-- <li ><a href="/randomthoughts.html">Random Thoughts</a></li> -->
-				<li  class="navactive"><a href="/posts.html">Posts</a></li>
+				<li ><a href="/posts.html">Posts</a></li>
 				<li ><a href="/photodiary.html">Photo Diary</a></li>
 			</ul>
 		</div>
+-->
+				<!-- <li ><a href="/randomthoughts.html">Random Thoughts</a></li> -->
 
 		<div class="main-container">
-			<div class="posts"><a href="#"> 01 February 2017 | Intro to PHP </a></div>
+			<!--
+<div class="posts"><a href="#"> 01 February 2017 | Intro to PHP </a></div>
+-->
+<div id="post-header">
+	<h2>Intro to PHP</h2>
+	<h4>01 February 2017</h4>
+</div>
+
 <p>Had to read a bunch of PHP codes for one of my modules, so I decided to learn the basics of PHP from codecademy! Jotting down the syntax here.</p>
 
 <p><br />
@@ -98,10 +106,10 @@
 
 	// ForEach 
 	$numbers = array(1, 2, 3, 4, 5);
-	foreach($numbers as $num) {
+	foreach($numbers as $num) { *or* foreach($numbers as $num): 
 		echo $num . " ";
 		// output = 1 2 3 4 5 
-	}
+	} *or* endforeach;
 ?&gt;
 </code></pre>
 </div>
@@ -191,7 +199,28 @@
 </code></pre>
 </div>
 <p><br /></p>
+<p> Objects in PHP: Object Oriented Programming </p>
+<p> Class; instance; methods; object; Properties: pieces of data bound to an object </p>
+<p>```
+&lt;?php
+	// Creating a class 
+	class Person {
+		// adding properties 
+		public $isAlive = true;
+		public $name; 
+	}</p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>// Creating an instance
+$student = new Person();
+print $student-&gt;isAlive;	// output: 1 ?&gt; /``
+</code></pre>
+</div>
+
+
+<div id="signoff">
+<p> ♡, </p>
+<p> Hui Wen </p>
+</div>
  
 		</div>
 
@@ -199,5 +228,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/index.js"></script>
 	</body>
 </html>

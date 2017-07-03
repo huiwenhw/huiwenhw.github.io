@@ -3,98 +3,123 @@
   src: url("fonts/Roboto-Thin-webfont.eot");
   src: url("fonts/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto-Thin-webfont.woff") format("woff"), url("fonts/Roboto-Thin-webfont.ttf") format("truetype"), url("fonts/Roboto-Thin-webfont.svg#RobotoThin") format("svg"); }
 @font-face {
+  font-family: 'zillaslab';
+  src: url("fonts/ZillaSlab-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: 'opensans';
+  src: url("fonts/OpenSans-Regular.ttf") format("truetype"); }
+@font-face {
   font-family: 'GreatVibes';
   src: url("fonts/GreatVibes-Regular.woff2") format("woff2"), url("fonts/GreatVibes-Regular.ttf") format("truetype"), url("fonts/GreatVibes-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-@media (max-width: 768px) {
-  body, html {
-    font-family: 'Roboto';
-    font-weight: 900;
-    padding: 5px;
-    margin: 0px; }
+/*
+ * Common styles 
+ */
+body, html, h3 {
+  font-family: 'Roboto';
+  font-weight: 900; }
 
-  h2 {
-    margin: 0px; }
+pre {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-weight: normal;
+  border: none; }
+  pre code {
+    white-space: pre; }
 
-  .main-container {
-    margin-right: 25px;
-    margin-left: 25px;
-    margin-top: 10px; } }
-@media (min-width: 769px) {
-  body, html {
-    font-family: 'Roboto';
-    font-weight: 900;
-    padding-left: 30px;
-    padding-right: 30px;
-    max-width: 1200px;
-    margin: auto; }
+blockquote {
+  overflow: scroll; }
 
-  .main-container {
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 20px; } }
+figure {
+  text-align: center; }
+
+.main-container {
+  max-width: 768px;
+  font-size: 18px;
+  margin: auto;
+  clear: both;
+  padding: 0px 30px 30px 30px; }
+
 a:focus {
   outline: none; }
 
+/*
+ * Small devices
+ */
 @media (max-width: 768px) {
+  blockquote {
+    font-size: 13px; }
+
   .header {
-    margin: 20px 0px 10px 0px; }
+    margin: 20px; }
     .header h1 {
-      font-size: 40px; } }
-@media (min-width: 768px) {
+      font-size: 50px; }
+
+  figure .jekylldir {
+    width: 100%; } }
+/*
+ * Large devices
+ */
+@media (min-width: 769px) {
   .header {
     margin: 20px 0px; }
     .header h1 {
-      font-size: 100px; } }
+      font-size: 100px; }
+
+  figure .jekylldir {
+    width: 50%; } }
+/*
+ * INDEX
+ */
 .header a, .header a:hover {
   text-decoration: none;
   color: black; }
 .header h1 {
   font-family: 'GreatVibes', 'Roboto';
-  text-align: center;
-  font-weight: 100;
-  margin: 0px; }
-
-@media (max-width: 768px) {
-  .nav-pills, .nav-justified {
-    margin: 0px 0px 20px 0px; }
-    .nav-pills li, .nav-justified li {
-      float: left;
-      display: table-cell;
-      width: 45%; } }
-@media (min-width: 768px) {
-  .nav-pills, .nav-justified {
-    margin: 20px 0px; } }
-.nav-pills .navactive a, .nav-justified .navactive a {
-  background-color: lightskyblue;
-  color: white; }
-.nav-pills a, .nav-justified a {
-  color: black; }
-
-.photos-parent {
   text-align: center; }
-  @media (max-width: 768px) {
-    .photos-parent .photos {
-      height: 200px; } }
-  @media (min-width: 768px) {
-    .photos-parent .photos {
-      height: 500px; } }
-  .photos-parent .photos {
-    margin: auto; }
 
-.posts {
+.intro h2 {
+  padding: 20px 0px 25px 0px; }
+
+/*
+ * POSTS PAGE
+ */
+#posts {
   list-style-type: none;
-  text-align: center;
-  font-size: 20px;
-  padding: 0px;
-  margin-bottom: 10px; }
-  .posts a {
+  margin-bottom: 10px;
+  width: 100%; }
+  #posts td {
+    padding-bottom: 12px; }
+    #posts td span {
+      border-bottom: 1px solid darkgrey; }
+  #posts a {
     color: #0abab5; }
-  .posts a:hover {
+  #posts a:hover {
     background-color: #e9e9e9;
     text-decoration: none; }
 
+@media (max-width: 580px) {
+  #posts .dates {
+    display: none; } }
+@media (min-width: 581px) {
+  #posts .dates {
+    font-family: 'opensans';
+    font-size: 15px;
+    color: grey;
+    text-align: right;
+    padding-right: 35px; } }
+/* 
+ * INDIVIDUAL POST
+ */
+#post-header h2 {
+  font-weight: bolder; }
+#post-header h4 {
+  margin-bottom: 30px; }
+
+/*
+ * UNUSED STYLES FOR NOW
+ */
 .postexcerpt {
   font-size: 15px; }
 
@@ -106,7 +131,73 @@ a:focus {
     font-size: 15px;
     text-align: left;
     margin: 0px 0px 10px 0px; }
-  .randomthoughts .posts {
+  .randomthoughts #posts {
     font-size: 14px; }
-    .randomthoughts .posts p {
+    .randomthoughts #posts p {
       text-align: left; }
+
+.navbar {
+  margin: 20px 0px;
+  list-style: none;
+  width: 100%; }
+  .navbar .navactive a {
+    background-color: lightskyblue;
+    border-radius: 20px;
+    color: white; }
+  .navbar a {
+    color: black;
+    text-decoration: none; }
+  .navbar li {
+    display: table-cell;
+    width: 1%; }
+    .navbar li a {
+      text-align: center;
+      display: block;
+      padding: 10px 15px; }
+    .navbar li a:hover {
+      background-color: #e9e9e9;
+      border-radius: 20px; }
+
+/*
+@media (min-width: 769px) {
+.header a#hamburger { display: none; }
+}
+
+@media (max-width: 768px) {
+.navbar { display: none; }
+
+.header {
+a#logo {
+float: left;
+margin-bottom: 15px;
+}
+a#hamburger {
+float: right;
+display: block;
+padding: 15px;
+}
+a#hamburger:hover {
+background-color: $lightgrey;
+border-radius: 15px;
+}
+}
+
+.navbar.responsive {
+float: none;
+padding: 0px;
+display: block;
+text-align: center;
+clear: both;
+}
+}
+ */
+.photos-parent {
+  text-align: center; }
+  @media (max-width: 768px) {
+    .photos-parent .photos {
+      height: 200px; } }
+  @media (min-width: 768px) {
+    .photos-parent .photos {
+      height: 500px; } }
+  .photos-parent .photos {
+    margin: auto; }

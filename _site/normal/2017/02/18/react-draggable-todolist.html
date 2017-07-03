@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no" />
+		<!-- Bootstrap -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="/css/style.css" type="text/css"/>
+		<title>Huiwen</title>
+	</head>
+	<body>
+		<!-- Header -->
+		<div class="header">
+			<a href="/" id="logo"><h1> Hui Wen </h1></a>
+		</div>
+
+<!--
+			<a href="javascript:void(0);" id="hamburger" onclick="showHam()">&#9776;</a>
+		<div class="">
+			<ul class="navbar" id="nav">
+				<li ><a href="/">About</a></li>
+				<li ><a href="/posts.html">Posts</a></li>
+				<li ><a href="/photodiary.html">Photo Diary</a></li>
+			</ul>
+		</div>
+-->
+				<!-- <li ><a href="/randomthoughts.html">Random Thoughts</a></li> -->
+
+		<div class="main-container">
+			<!--
+<div class="posts"><a href="#"> 18 February 2017 | Intro to React </a></div>
+-->
+<div id="post-header">
+	<h2>Intro to React</h2>
+	<h4>18 February 2017</h4>
+</div>
+
+<p>I had to create a draggable &amp; sortable todo list app, and I’ve tried React once using JSBin, so I figured it would be better to do everything from scratch so I know what’s going on. Found this <a href="http://andrewhfarmer.com/build-your-own-starter/#0-intro">tutorial online</a> &amp; I’m jotting down notes here!</p>
+
+<p>#2 NPM</p>
+
+<p>We add a package.json file to record our npm dependencies. Stuff that we add in the later steps are npm packages: Babel, Webpack, React etc. Adding a “node_modules” in .gitignore tells git to ignore the “node_modules” folder. It can be auto generated so we don’t need it! Since its now an npm project, the “npm install” command can be used to install all dependencies.</p>
+
+<p>#3 Babel</p>
+
+<p>Babel transforms the ES6 + JSX JS that we’ll be writing into ES5 JS that browsers can understand. We’ll write in a special syntax called JSX, which lets you put HTML-like code inside Javascript.</p>
+
+<p>#4 Webpack</p>
+
+<p>Webpack bundle all our JS together into a single file. This includes all the JS file that we write &amp; the npm packages. Reason: A single .js file is easier to deploy &amp; usually downloads faster than multiple small files. Webpack will work with Babel to convert our code from ES6/7 -&gt; ES5 while we work. Webpack also minifies our .js file for production.</p>
+
+<p>babel-loader is a Webpack ‘loader’. It supports running Babel from Webpack.</p>
+
+<p>#5 Express</p>
+
+<p>A React dev env needs some way to show your app in a browser =&gt; which means, we’ll need a server. We’ll set up Express as our server.</p>
+
+<p>Main file added here is server.js: It will run an Express server, which will run Webpack. Webpack will rerun whenever we change one of our JS files.</p>
+
+<p>server.js is server-side JS. We can run it with the node server.js command. We’ll be adding a start script to run the server tooooo</p>
+
+<p>Start by creating www/index.html as our first web page. Express is configured to serve all the files in the folder.</p>
+
+
+
+<div id="signoff">
+<p> ♡, </p>
+<p> Hui Wen </p>
+</div>
+ 
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/index.js"></script>
+	</body>
+</html>

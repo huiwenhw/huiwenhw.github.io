@@ -13,46 +13,85 @@
 	<body>
 		<!-- Header -->
 		<div class="header">
-			<a href="/">
-				<h1> Hui Wen </h1>
-			</a>
+			<a href="/" id="logo"><h1> Hui Wen </h1></a>
 		</div>
 
-		<div class="container-fluid">
-			<ul class="nav nav-pills nav-justified">
+<!--
+			<a href="javascript:void(0);" id="hamburger" onclick="showHam()">&#9776;</a>
+		<div class="">
+			<ul class="navbar" id="nav">
 				<li ><a href="/">About</a></li>
-				<!-- <li ><a href="/randomthoughts.html">Random Thoughts</a></li> -->
 				<li  class="navactive"><a href="/posts.html">Posts</a></li>
 				<li ><a href="/photodiary.html">Photo Diary</a></li>
 			</ul>
 		</div>
+-->
+				<!-- <li ><a href="/randomthoughts.html">Random Thoughts</a></li> -->
 
 		<div class="main-container">
 			<div>
-	<ul class="posts">
+	<table id="posts">
 		
-		<li>
-			<a href="/posts/">01 February 2017 | Intro to PHP</a>
+		<tr>
+			<td class="dates">24-03-2017</td>
+			<td><a href="/normal/2017/03/24/Settingup.html"><span>Setting up site using Jekyll & Github pages</span></a></td>
+			<!--
+			<p class="postexcerpt"> I’m assuming that you know Git, Github &amp; Github pages! If you don’t, <a href="http://jmcglone.com/guides/github-pages/">here’s</a> a pretty good site to get you started (:
+
+ </p>
+			-->
+		</tr>
+		
+		<tr>
+			<td class="dates">08-03-2017</td>
+			<td><a href="/normal/2017/03/08/rails-lingo.html"><span>Creating multiple todo-lists in Rails</span></a></td>
+			<!--
+			<p class="postexcerpt"> Steps I followed:
+Controller is like views in django
+
+ </p>
+			-->
+		</tr>
+		
+		<tr>
+			<td class="dates">18-02-2017</td>
+			<td><a href="/normal/2017/02/18/react-draggable-todolist.html"><span>Intro to React</span></a></td>
+			<!--
+			<p class="postexcerpt"> I had to create a draggable &amp; sortable todo list app, and I’ve tried React once using JSBin, so I figured it would be better to do everything from scratch so I know what’s going on. Found this <a href="http://andrewhfarmer.com/build-your-own-starter/#0-intro">tutorial online</a> &amp; I’m jotting down notes here!
+
+ </p>
+			-->
+		</tr>
+		
+		<tr>
+			<td class="dates">01-02-2017</td>
+			<td><a href="/normal/2017/02/01/intro-to-php.html"><span>Intro to PHP</span></a></td>
+			<!--
 			<p class="postexcerpt"> Had to read a bunch of PHP codes for one of my modules, so I decided to learn the basics of PHP from codecademy! Jotting down the syntax here.
 
  </p>
-		</li>
+			-->
+		</tr>
 		
-		<li>
-			<a href="/normal/2017/01/12/misses.html">12 January 2017 | Missing the Valley</a>
+		<tr>
+			<td class="dates">12-01-2017</td>
+			<td><a href="/normal/2017/01/12/misses.html"><span>Missing the Valley</span></a></td>
+			<!--
 			<p class="postexcerpt"> After half a year of being away, I still miss the valley. Certain songs tend to trigger the memories and emotions I felt back when I was there. Its a feeling that’s hard to put into words and I think only the people who were there with me would understand. Current song that’s triggering these memories: Photograph - Ed Sheeran.
-
  </p>
-		</li>
+			-->
+		</tr>
 		
-		<li>
-			<a href="/posts/">11 January 2017 | Hello</a>
+		<tr>
+			<td class="dates">11-01-2017</td>
+			<td><a href="/normal/2017/01/11/hello.html"><span>Hello</span></a></td>
+			<!--
 			<p class="postexcerpt"> Hello. I’ve always wanted to build my blog from scratch after facing problems of finding the right template, being unable to customise the colours according to what I want et cetera et cetera. And so, here’s a simple layout.
-
  </p>
-		</li>
+			-->
+		</tr>
 		
-	</ul>
+	</table>
 </div>
  
 		</div>
@@ -61,5 +100,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/index.js"></script>
 	</body>
 </html>
