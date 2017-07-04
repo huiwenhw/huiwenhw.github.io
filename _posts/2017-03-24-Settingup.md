@@ -9,18 +9,17 @@ I'm assuming that you know Git, Github & Github pages! If you don't, [here's](ht
 Soo let's start!! There're a few things we need to do:
 1. Create a github page 
 2. Set up Jekyll
-3. Add HTTPS to our site 
+3. Add HTTPS to our site (Won't be touching on it in this post)
 
-P.S. I like to use the terminal, so everything's done using commands :D
+P.S. I like to use the terminal, so everything's done in cli. 
 
-### 1. Create a github page [(Reference)](https://pages.github.com/)
-Github pages is a ...
-1. Create a github repo, with the repo name as username.github.io (so mine's huiwenhw.github.io) 
+### 1. Create a [github page](https://pages.github.com/)
+1. Create a github repo, with the repo name as username.github.io (mine's huiwenhw.github.io) 
 2. Clone the repository 
 ```
 $ git clone https://github.com/username/username.github.io
 ```
-3. Go into the repo folder & create a index.html file (which is the default page for your site) 
+3. cd into the repo folder & create a index.html file (which is the default page for your site) 
 ```
 $ cd username.github.io
 $ echo "Hello World" > index.html
@@ -31,10 +30,10 @@ $ git add --all
 $ git commit -m "Initial commit"
 $ git push -u origin master
 ```
-5. Head on to http://username.github.io! You'll see a 'Hello World' printed on the page. 
+5. Head on to http://yourusername.github.io! You'll see a 'Hello World' printed on the page. 
 
 ### 2. Set up Jekyll
-Jekyll is a static site generator. Simply put, static site generators takes the content we give it & outputs it on the screen. There's no dynamic interaction such as requesting for files etc. and is really useful for simple sites like a blog. If you're interested to know [more](https://davidwalsh.name/introduction-static-site-generators).  
+Jekyll is a static site generator. Simply put, static site generators takes the content we give it & outputs it on the screen. There's no dynamic interaction such as requesting for files etc. and is really useful for simple sites like a blog. If you're interested to know more, you can take a look [here](https://davidwalsh.name/introduction-static-site-generators).  
 <br>
 To install jekyll, do 
 ```
@@ -55,7 +54,7 @@ Your newly generated site will look something like this:
 <img class="jekylldir" src="/../images/jekyll_gensite.png" alt="Jekyll's Generated Site"/>
 </figure>
 <br>
-After the commands above, this is what you'll see in your directory
+After that's done, this is what you'll see in your directory:
 ```
 $ ls
 $ Gemfile, _config.yml, _site, index.md, Gemfile.lock, _posts, about.md
@@ -65,6 +64,8 @@ Jekyll follows a directory structure, such as the one shown below, so its good t
 <figure>
 <img class="jekylldir" src="/../images/jekyll_dir.png" alt="Jekyll's Directory"/>
 </figure>
+<br>
+Rough idea on the various directories:
 + _drafts: Contains posts which we do not want to post / show on our site yet
 + _includes: The partials that we can use in our layout
 + _layouts: Consists of the templates that wrap posts
@@ -84,7 +85,7 @@ In this file, write the template you want for your home page. I'll put a simple 
 </head>
 <body>
 	<div class="main-container">
-		{'{ content }}
+		{'{ content }} 
 	</div>
 </body>
 </html>
@@ -98,15 +99,18 @@ layout: default
 ```
 in our index.html and it will render the layout we had in _layouts/default.html. Whatever content that you put below the front matter will be rendered into the content tags that we wrote in _layouts/defaults.html. 
 
+The next thing we can do is to show all the posts that we have written. A simple loop such as the one below will work: (Ignore the ' in the code. I had to do that to stop the code from running LOL) 
+
 ```
 ---
 layout: default
 ---
 <ul>
-	{% for post in site.posts %}
+	{'% for post in site.posts %}
 		<li>  
-			<a href="{{ post.url }}">{{ post.title }}</a>
+			<'a href="{'{ post.url }}">{'{ post.title }}</a>
 		</li>           
-	{% endfor %}      
+	{'% endfor %}      
 </ul>   
 ```
+There're many other useful stuffs such as the link tag, which allows you to link to a post, page or file in your project! Aaaand that's about it! The [jekyll docs](https://jekyllrb.com/docs/usage/) were really useful in helping me set up my page.

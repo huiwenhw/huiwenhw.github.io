@@ -4,6 +4,7 @@ title: Creating multiple todo-lists in Rails
 category: normal
 ---
 
+// 2017-03-08
 Steps I followed:
 Controller is like views in django 
 

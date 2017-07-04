@@ -4,7 +4,7 @@ title: Intro to PHP
 category: normal
 ---
   
-Had to read a bunch of PHP codes for one of my modules, so I decided to learn the basics of PHP from codecademy! Jotting down the syntax here. 
+I had to read a bunch of PHP codes for one of my modules, so I decided to learn the basics of PHP from codecademy! This post will basically be a journal of syntax and of PHP. Skip if not interested! 
 
 <br>
 "PHP is an OOP language. PHP runs on the same computer as the website you're visiting, which is known as the server. This means that it has access to all the information and files on that machine, which allows it to construct custom HTML pages to send to your browser, handle cookies, and run tasks or perform calculations with data from that website."
@@ -16,7 +16,7 @@ Syntax: Requires ; at end of every line
 Comments: Using // 
 
 <br>
-<p> Echo(output), concatenation(.), $variables, conditional statements </p>
+<p> Using echo for output, '.' for concatenation, $ for variables and conditional statements </p>
 ```
 <?php
 	echo "I'm learning" . " " . "PHP!";
@@ -51,11 +51,11 @@ Comments: Using //
 ?>
 ```
 <br>
-<p> Array. Init, modify + echo with [] & {} </p>
+<p> On arrays. How to init, modify and echo with [] & {} </p>
 ```
 <?php 
 	$snacks = array("potato chips", "jagabee");
-	echo $snacks[0]/{0}; 
+	echo $snacks[0] *or* {0}; 
 	$snacks[0] = "pistachio"; 
 
 	// Array. Deleting array element & whole array 
@@ -64,7 +64,7 @@ Comments: Using //
 ?>
 ```
 <br>
-<p> For loops & ForEach (loops + arrays) </p>
+<p> On loops and arrays. (For loops and ForEach) </p>
 ```
 <?php
 	// For loops
@@ -74,25 +74,35 @@ Comments: Using //
 
 	// ForEach 
 	$numbers = array(1, 2, 3, 4, 5);
-	foreach($numbers as $num) { *or* foreach($numbers as $num): 
+	foreach($numbers as $num) { 
 		echo $num . " ";
 		// output = 1 2 3 4 5 
-	} *or* endforeach;
+	} 
+	// Another representation of ForEach
+	foreach($numbers as $num): 
+		echo $num . " ";
+		// output = 1 2 3 4 5 
+	endforeach;
 ?>
 ```
 <br>
-<p> While Loops: Checks cond first </p>
+<p> On while loops: Checks cond first </p>
 ```
 <?php 
 	$loopCond = true;
-	while($loopCond) { *or* while($loopCond): 
+	while($loopCond) {  
 		echo "<p>The loop is running.</p>";
 		$loopCond = false;
-	} *or* endwhile;
+	}
+	// Another rep 
+	while($loopCond): 
+		echo "<p>The loop is running.</p>";
+		$loopCond = false;
+	endwhile;
 ?>
 ```
 <br>
-<p> Do-While Loops: Checks cond aft each iteration </p>
+<p> On do-while loops: Checks cond aft each iteration </p>
 ```
 <?php
 	$loopCond = false;
@@ -181,4 +191,4 @@ Comments: Using //
 	$student = new Person();
 	print $student->isAlive;	// output: 1
 ?>
-/``
+```

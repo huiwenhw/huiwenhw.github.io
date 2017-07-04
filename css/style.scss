@@ -25,6 +25,11 @@ $tiffany: #0abab5;
 }
 
 @font-face {
+	font-family: 'ptsans';
+	src: url('fonts/PT_Sans-Web-Regular.ttf') format('truetype');
+}
+
+@font-face {
 	font-family: 'GreatVibes';
 	src: url('fonts/GreatVibes-Regular.woff2') format('woff2'),
 	url('fonts/GreatVibes-Regular.ttf') format('truetype'),
@@ -36,10 +41,13 @@ $tiffany: #0abab5;
 /*
  * Common styles 
  */
-body, html, h3 {
+body, html {
 	font-family: 'Roboto';
 	font-weight: 900;
 }
+p {
+	padding-bottom: 10px;
+}	
 pre {
 	background-color: rgba(0,0,0, 0.9);
 	color: white;
@@ -139,7 +147,7 @@ a:focus {
 
 	td {
 		padding-bottom: 12px;
-		
+
 		span {
 			border-bottom: 1px solid darkgrey;
 		}
@@ -179,11 +187,26 @@ a:focus {
  * INDIVIDUAL POST
  */
 #post-header {
-	h2 {
-		font-weight: bolder;
-	}
-	h4 {
-		margin-bottom: 30px;
+    color: #0abab5;
+		h2 {
+			font-weight: bolder;
+		}
+		h4 {
+			margin-bottom: 30px;
+		}
+}
+#post-content {
+		font-family: 'ptsans';
+		font-weight: 100;
+}
+@media (max-width: 580px) {
+	#post-header {
+		h2 {
+			font-size: 28px;
+		}
+		h4 {
+			font-size: 18px;
+		}
 	}
 }
 
