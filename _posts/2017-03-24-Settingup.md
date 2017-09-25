@@ -1,21 +1,23 @@
 ---
 layout: post
-title: Setting up site using Jekyll & Github pages
+title: Creating your own website with Jekyll
 categories: normal
 --- 
 
-I'm assuming that you know Git, Github & Github pages! If you don't, [here's](http://jmcglone.com/guides/github-pages/) a pretty good site to get you started (:
+Hello peopleee! I created this website using Jekyll and Github pages, so I'm gonna write a simple tutorial on how to set it up (:
 
-Soo let's start!! There're a few things we need to do:
+If you don't know Git, Github & Github pages, [here's](http://jmcglone.com/guides/github-pages/) a pretty good site to get you started! 
+
+Basically, we need to:
 1. Create a github page 
 2. Set up Jekyll
 3. Add HTTPS to our site (Won't be touching on it in this post)
 
-P.S. I like to use the terminal, so everything's done in cli. 
+P.S. I like to use the terminal, so everything's done in command--line. 
 
 ### 1. Create a [github page](https://pages.github.com/)
-1. Create a github repo, with the repo name as username.github.io (mine's huiwenhw.github.io) 
-2. Clone the repository 
+1. Create a github repository, with the repo name as username.github.io (mine's huiwenhw.github.io) 
+2. Clone the repository on your local machine 
 ```
 $ git clone https://github.com/username/username.github.io
 ```
@@ -35,7 +37,7 @@ $ git push -u origin master
 ### 2. Set up Jekyll
 Jekyll is a static site generator. Simply put, static site generators takes the content we give it & outputs it on the screen. There's no dynamic interaction such as requesting for files etc. and is really useful for simple sites like a blog. If you're interested to know more, you can take a look [here](https://davidwalsh.name/introduction-static-site-generators).  
 <br>
-To install jekyll, do 
+To install jekyll, do (the # are comments) 
 ```
 # Install Jekyll and Bundler gems through RubyGems
 $ gem install jekyll bundler 
@@ -74,7 +76,7 @@ Rough idea on the various directories:
 + _site: Folder where our generated site will be stored! Don't touch this folder
 + index.html: Where our template for the index page goes 
 
-Okay, now that we roughly know where our stuffs should go, its time to start building the structure. I didn't really like the template that jekyll had, so I created my own template & styles. The first thing we wanna do is to create the base template for our site. Soo let's go and create a _layouts folder and add a default.html inside. You can name the file anything you like!
+Okay, now that we roughly know where our stuffs should go, its time to start building the structure. I didn't really like the template that jekyll had, so I created my own template & styles. The first thing we wanna do is to create the base template for our site. Soo let's create a _layouts folder and add a default.html file inside. You can name the file anything you like!
 
 In this file, write the template you want for your home page. I'll put a simple example below: 
 ```
@@ -97,7 +99,7 @@ Now, we have a default layout that we can use on every page! yay! What does this
 layout: default
 ---
 ```
-in our index.html and it will render the layout we had in _layouts/default.html. Whatever content that you put below the front matter will be rendered into the content tags that we wrote in _layouts/defaults.html. 
+in our index.html and it will render the layout we had in _layouts/default.html. If you named the file something else, then just replace 'default' with that name. Whatever content that you put below the front matter will be rendered into the content tags (i.e. the { } curly brackets) that we wrote in _layouts/defaults.html. 
 
 The next thing we can do is to show all the posts that we have written. A simple loop such as the one below will work: (Ignore the ' in the code. I had to do that to stop the code from running LOL) 
 
@@ -113,4 +115,4 @@ layout: default
 	{'% endfor %}      
 </ul>   
 ```
-There're many other useful stuffs such as the link tag, which allows you to link to a post, page or file in your project! Aaaand that's about it! The [jekyll docs](https://jekyllrb.com/docs/usage/) were really useful in helping me set up my page.
+Now we have a simple working page hosted on github that displays a list of posts we have! YAY! There're many other useful stuffs such as the link tag, which allows you to link to a post, page or file in your project! Aaaand that's about it! Head over to the [jekyll docs](https://jekyllrb.com/docs/usage/) to explore more features. It was really useful when I was setting up my page. 

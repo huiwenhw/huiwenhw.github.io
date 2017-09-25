@@ -4,7 +4,7 @@ title: this, bind() and partially applied functions
 category: normal
 ---
 
-This post is to help us to understand more about the 'this' keyword in JS, bind() method and what are partially applied functions. 
+I recently came across partially applied functions, and in order to understand that, it helps to know more about the `this` keyword in Javascript and the bind() function. So this post is to help us understand more about them (:
 
 # Understanding bind() and 'this' 
 The bind() method allows us to create a function that has a particular 'this' value. We'll use the example from [MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind#Examples) to understand bind(). Follow along in your console! 
@@ -46,7 +46,7 @@ boundGetX();    // 81
 
 Now, we are binding the module object's 'this' keyword to the retrieveX function. So whenever we call boundGetX(), it is returning the x:81 value in the module object.
 
-Okay, now we want to test our understanding of 'this'. Q&A:  
+To test that we really know what's going on, let's have a super short Q&A: 
 ```
 this.x = 9;
 
@@ -58,7 +58,7 @@ var module = {
 var firstX = module.getX();
 firstX;
 ````
-Answer? 81! We're using the module.getX() func, so no tricks here. 
+What do we get? 81! We're using the module.getX() func, so no tricks here. 
 
 ```
 this.x = 9;
@@ -71,20 +71,7 @@ var module = {
 var secX = module.getX; 
 secX(); 
 ```
-Answer? 9! secX is now a function that returns this.x; We're calling it in the global scope, so its 9.
-
-```
-this.x = 9;
-
-var thirdX = { 
-    x: 11,
-    getX: function() { return this.x; }
-}
-
-var retrieveThird = thirdX.getX;
-retrieveThird();
-```
-Answer? 9! Same as the above, thirdX is now a function that returns this.x;  We're calling it in the global scope, so its 9.
+What do we get? 9! secX is now a function that returns this.x; and we're calling it in the global scope, so its 9.
 
 ```
 this.x = 9;
@@ -94,10 +81,11 @@ var thirdX = {
     getX: function() { return this.x; }
 }   
 
+var retrieveThird = thirdX.getX;
 var retrieveFour = retrieveThird.bind(thirdX);
 retrieveFour();
 ```
-Answer? 11! We binded the 'this' keyword to the thirdX object, so this.x refers to 11 now.
+What do we get? 11! We binded the 'this' keyword to the thirdX object, so this.x refers to 11 now.
 
 # What are partially applied functions in Javascript?
 Partially applied functions are useful when we don't have all of the required arguments when using a particular function.

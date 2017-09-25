@@ -72,10 +72,16 @@ figure {
 	clear: both; 
 	padding: 0px 30px 30px 30px;
 }
-a:focus {
-	outline: none;
-}
+a {
+    text-decoration: none;
 
+    &:hover {
+        text-decoration: none;
+    }
+    &:focus {
+	    outline: none;
+    }
+}
 
 /*
  * Small devices
@@ -148,10 +154,6 @@ a:focus {
 
 	td {
 		padding-bottom: 12px;
-
-		span {
-			border-bottom: 1px solid darkgrey;
-		}
 	}
 
 	a {
@@ -195,10 +197,18 @@ a:focus {
 		h4 {
 			margin-bottom: 30px;
 		}
+        #date {
+            float: left;
+        }
+        #back {
+            float: right;
+            a { color: #0abab5; }
+        }
 }
 #post-content {
 		font-family: 'ptsans';
 		font-weight: 100;
+        clear: both;
 }
 @media (max-width: 580px) {
 	#post-header {
