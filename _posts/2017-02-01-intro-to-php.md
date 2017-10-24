@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Intro to PHP 
+title: PHP syntax 
 category: normal
 ---
-  
-I had to read a bunch of PHP codes for one of my modules, so I decided to learn the basics of PHP from codecademy! This post will basically be a journal of syntax and of PHP. Skip if not interested! 
+
+I had to add a feature to a open source project for one of my modules, and there was a bunch of PHP codes that I had to read. So I went on a PHP-learning session at codecademy. This post will mostly be on PHP's syntax / data structures.
 
 <br>
 "PHP is an OOP language. PHP runs on the same computer as the website you're visiting, which is known as the server. This means that it has access to all the information and files on that machine, which allows it to construct custom HTML pages to send to your browser, handle cookies, and run tasks or perform calculations with data from that website."
