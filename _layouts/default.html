@@ -11,28 +11,14 @@
 		<title>Huiwen</title>
 	</head>
 	<body>
-		<!-- Header -->
 		<div class="header">
 			<a href="/" id="logo"><h1> Hui Wen </h1></a>
 		</div>
-
-<!--
-			<a href="javascript:void(0);" id="hamburger" onclick="showHam()">&#9776;</a>
-		<div class="">
-			<ul class="navbar" id="nav">
-				<li {% if page.url == '/' %} class="navactive"{% endif %}><a href="/">About</a></li>
-				<li {% if page.url == '/posts.html' or page.url == '/posts/' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link posts.html %}">Posts</a></li>
-				<li {% if page.url == '/photodiary.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link photodiary.html %}">Photo Diary</a></li>
-			</ul>
-		</div>
--->
-				<!-- <li {% if page.url == '/randomthoughts.html' %} class="navactive"{% endif %}><a href="{{ site.baseurl }}{% link randomthoughts.html %}">Random Thoughts</a></li> -->
 
 		<div class="main-container">
 			{{ content }} 
 		</div>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="/js/bootstrap.min.js"></script>
