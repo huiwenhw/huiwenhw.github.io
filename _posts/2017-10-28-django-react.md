@@ -116,7 +116,31 @@ $ python3 manage.py runserver 0.0.0.0:8000
 
 We'll work on token authentication and adding React to our project next :)
 
---- TBC --- 
+Adding token authentication according to the [drf site](http://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme):
+```
+# in settings.py:
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+
+INSTALLED_APPS = (
+    ...
+	'rest_framework',
+    'rest_framework.authtoken'
+)
+```
+Run `python manage.py migrate` after updating the above. The rest_framework.authtoken app provides Django database migrations.
+
+Now, we can create a superuser to test if we set up the token auth correctly. 
+```
+$ python manage.py createsuperuser (follow the instructions given)
+$ python manage.py runserver 0.0.0.0:8000 
+$ curl -X POST -d "username=username&password=password" http://localhost:8000/auth 
+```
+Substitute in your username and password. You should receive a token as a response.
 
 Credits / helpful links:
 - [Create website using React and Django REST framework](https://hackernoon.com/creating-websites-using-react-and-django-rest-framework-b14c066087c7)

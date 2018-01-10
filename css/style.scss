@@ -46,19 +46,8 @@ body, html {
 	font-weight: 900;
 }
 p {
-	padding-bottom: 10px;
+	margin: 10px 0px;
 }	
-pre {
-	background-color: rgba(0,0,0, 0.9);
-    padding: 20px;
-	color: white;
-	font-weight: normal;
-	border: none;
-
-	code {
-		white-space: pre;
-	}
-}
 blockquote {
 	overflow: scroll;
 }
@@ -81,6 +70,9 @@ a {
     &:focus {
 	    outline: none;
     }
+}
+.highlight {
+	background-color: black;
 }
 
 /*
@@ -206,9 +198,9 @@ a {
         }
 }
 #post-content {
-		font-family: 'ptsans';
-		font-weight: 100;
-        clear: both;
+	font-family: 'ptsans';
+	font-weight: 100;
+	clear: both;
 }
 @media (max-width: 580px) {
 	#post-header {
@@ -221,115 +213,30 @@ a {
 	}
 }
 
-/*
- * UNUSED STYLES FOR NOW
- */ 
-.postexcerpt {
-	font-size: 15px;
-}
-
-.randomthoughts {
-	list-style-type: none;
-	padding: 0px;
-
-	.title p {
-		color: $tiffany;
-		font-size: 15px;
-		text-align: left;
-		margin: 0px 0px 10px 0px;
-	}
-
-	#posts {
-		font-size: 14px;
-
-		p {
-			text-align: left;
-		}
-	}
-}
-
-.navbar {
-	margin: 20px 0px;
-	list-style: none;
-	width: 100%;
-
-	.navactive a {
-		background-color: lightskyblue;
-		border-radius: 20px;
-		color: white;
-	}
-
-	a {
-		color: black;
-		text-decoration: none;
-	}
-
-	li {
-		display: table-cell;
-		width: 1%;
-
-		a {
-			text-align: center;
-			display: block;
-			padding: 10px 15px;
-
-		}
-
-		a:hover {
-			background-color: $lightgrey;
-			border-radius: 20px;
-		}
-	}
-}
-/*
-@media (min-width: 769px) {
-.header a#hamburger { display: none; }
-}
-
-@media (max-width: 768px) {
-.navbar { display: none; }
-
-.header {
-a#logo {
-float: left;
-margin-bottom: 15px;
-}
-a#hamburger {
-float: right;
-display: block;
-padding: 15px;
-}
-a#hamburger:hover {
-background-color: $lightgrey;
-border-radius: 15px;
-}
-}
-
-.navbar.responsive {
-float: none;
-padding: 0px;
-display: block;
-text-align: center;
-clear: both;
-}
-}
+/* 
+ * CENTERING POST
  */
-
-.photos-parent {
-	.photos {
-		@media (max-width: 768px) {
-			height: 200px;
-		}
-
-		@media (min-width: 768px) {
-			height: 500px;
+#post-content {
+	.parent {
+    	background: black;
+    	height: 100px;
+    	position: relative;
+		div {
+	    	color: white;
+    		position: absolute;
+    		border: 1px solid white;
+   			width: 300px;
+    		text-align: center;
 		}
 	}
-
-	text-align: center;
-
-	.photos {
-		margin: auto;
+	#child-one {
+		top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+	}
+	#parent-two {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
-

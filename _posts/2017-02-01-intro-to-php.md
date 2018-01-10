@@ -17,7 +17,7 @@ Comments: Using //
 
 <br>
 <p> Using echo for output, '.' for concatenation, $ for variables and conditional statements </p>
-```
+```php
 <?php
 	echo "I'm learning" . " " . "PHP!";
 	echo 17 * 123;
@@ -33,7 +33,7 @@ Comments: Using //
 ```
 <br>
 <p> Switch Statements </p>
-```
+```php
 <?php 
 	case $i = 5;
 	switch($i) { *or* switch($i): 
@@ -52,7 +52,7 @@ Comments: Using //
 ```
 <br>
 <p> On arrays. How to init, modify and echo with [] & {} </p>
-```
+```php
 <?php 
 	$snacks = array("potato chips", "jagabee");
 	echo $snacks[0] *or* {0}; 
@@ -65,7 +65,7 @@ Comments: Using //
 ```
 <br>
 <p> On loops and arrays. (For loops and ForEach) </p>
-```
+```php
 <?php
 	// For loops
 	for($i = 10; $i <= 100; $i = $i + 10) {
@@ -87,7 +87,7 @@ Comments: Using //
 ```
 <br>
 <p> On while loops: Checks cond first </p>
-```
+```php
 <?php 
 	$loopCond = true;
 	while($loopCond) {  
@@ -103,7 +103,7 @@ Comments: Using //
 ```
 <br>
 <p> On do-while loops: Checks cond aft each iteration </p>
-```
+```php
 <?php
 	$loopCond = false;
 	do {
@@ -113,7 +113,7 @@ Comments: Using //
 ```
 <br>
 <p> Functions: String </p>
-```
+```php
 <?php
 	$name = "huiwen";
 	// substring. output: hui
@@ -133,7 +133,7 @@ Comments: Using //
 ```
 <br>
 <p> Functions: Math </p>
-```
+```php
 <?php
 	// Rounding number to int/decimal place. output: 3 & 3.142 
 	print round(M_PI);
@@ -146,7 +146,7 @@ Comments: Using //
 ```
 <br>
 <p> Functions: Array </p>
-```
+```php
 <?php
 	// Pushing elements into array
 	$randstr = array();
@@ -166,7 +166,7 @@ Comments: Using //
 ```
 <br>
 <p> Writing our own functions </p>
-```
+```php
 <?php
 	function aboutMe($name, $age) {
 		echo "Hello! My name is {$name}, and I am {$age} years old.";
@@ -178,7 +178,7 @@ Comments: Using //
 <br>
 <p> Objects in PHP: Object Oriented Programming </p>
 <p> Class; instance; methods; object; Properties: pieces of data bound to an object </p>
-```
+```php
 <?php
 	// Creating a class 
 	class Person {
