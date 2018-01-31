@@ -1,0 +1,51 @@
+@mixin triangle-right() {
+    border-top: 15px solid transparent;
+    border-left: 15px solid pink;
+	border-bottom: 15px solid transparent;
+}
+
+@mixin triangle-left-inward() {
+    border-top: 15px solid pink;
+    border-left: 15px solid transparent;
+	border-bottom: 15px solid pink;
+}
+
+.zh {
+	height: 0;
+}
+
+.zw {
+	width: 0;
+}
+
+.triangle {
+	@include triangle-right();
+}
+
+.triangle-inward {
+	@include triangle-left-inward();
+}
+
+.arrow {
+	position: relative;	
+	height: 30px;
+	background: pink;
+	padding: 0px 12px;
+	display: inline-block;
+}
+
+.arrow:before, 
+.arrow:after {
+	position: absolute;
+	content: "";
+}
+
+.arrow:before {
+	@include triangle-left-inward();
+	left: -15px; 	
+}
+
+.arrow:after {
+	@include triangle-right();
+    right: -15px;
+}
