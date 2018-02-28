@@ -7,7 +7,7 @@ category: normal
 In my opinion, centering is a must-know technique for front end developers. There are many ways we can do this according to [this article](https://css-tricks.com/centering-css-complete-guide/) depending on how you want to center your element, but in this post I will touch on centering elements vertically and horizontally with examples below:
 
 <div class="parent">
-	<div id="child-one">
+	<div class="child-one">
 		First method: Using top, left and transform
 	</div>
 </div>
@@ -24,7 +24,7 @@ inner-div {
 }
 ```
 
-<div class="parent" id="parent-two">
+<div class="parent" class="parent-two">
 	<div>
 		Second method: Using flexbox
 	</div>

@@ -1,17 +1,17 @@
 ---
 layout: default
 ---
-<div id="post-header">
+<div class="post-header">
 	<h2>{{ page.title }}</h2>
-	<h4 id="date">{{ page.date | date: '%d %B %Y' }}</h4>
-	<h4 id="back"><a href="{% link posts.html %}">Back</a></h4>
+	<h4 class="date">{{ page.date | date: '%d %B %Y' }}</h4>
+	<h4 class="back"><a href="{% link posts.html %}">Back</a></h4>
 </div>
 
-<div id="post-content">
+<div class="post-content">
 {{ content }}
 </div>
 
-<div id="signoff">
+<div class="signoff">
 <p></p>
 <p> ♡, Hui Wen </p>
 </div>

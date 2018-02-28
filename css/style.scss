@@ -141,7 +141,7 @@ a {
 /*
  * POSTS PAGE
  */
-#posts {
+.posts {
 	list-style-type: none;
 	margin-bottom: 10px;
 	width: 100%;
@@ -161,7 +161,7 @@ a {
 }
 
 @media (max-width: 580px) {
-	#posts {
+	.posts {
 		.dates {
 			display: none;
 		}
@@ -169,7 +169,7 @@ a {
 }
 
 @media (min-width: 581px) {
-	#posts {
+	.posts {
 		.dates {
 			font-family: 'opensans';
 			font-size: 15px;
@@ -183,7 +183,7 @@ a {
 /* 
  * INDIVIDUAL POST
  */
-#post-header {
+.post-header {
     color: #0abab5;
 		h2 {
 			font-weight: bolder;
@@ -191,21 +191,21 @@ a {
 		h4 {
 			margin-bottom: 30px;
 		}
-        #date {
+        .date {
             float: left;
         }
-        #back {
+        .back {
             float: right;
             a { color: #0abab5; }
         }
 }
-#post-content {
+.post-content {
 	font-family: 'ptsans';
 	font-weight: 100;
 	clear: both;
 }
 @media (max-width: 580px) {
-	#post-header {
+	.post-header {
 		h2 {
 			font-size: 28px;
 		}
@@ -218,7 +218,7 @@ a {
 /* 
  * CENTERING POST
  */
-#post-content {
+.post-content {
 	.parent {
     	background: black;
     	height: 100px;
@@ -231,12 +231,12 @@ a {
     		text-align: center;
 		}
 	}
-	#child-one {
+	.child-one {
 		top: 50%;
     	left: 50%;
     	transform: translate(-50%, -50%);
 	}
-	#parent-two {
+	.parent-two {
 		display: flex;
 		align-items: center;
 		justify-content: center;
