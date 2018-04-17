@@ -2,14 +2,53 @@
 layout: default
 ---
 
-<div id="intro">
+<div class="intro">
+	<p>"Software engineer who loves all things with great user experience and photography."</p>
+</div>
 
+<div class="row">
+	<div class="col col-first">
+	{% for post in site.posts %}
+		{% assign loopindex = forloop.index | modulo: 3 %}
+		{% if loopindex == 0 %}
+	    	<div class="box">
+    			<a class="box-title" href="{{ post.url }}">
+    				<p> {{ post.title | upcase }} </p>
+    			</a>
+    			<p class="grey"> {{ post.excerpt | remove: '<p>' | remove: '</p>' }} </p>
+    			<a class="grey" href="{{ post.url }}"> Read more >> </a>
+			</div>
+		{% endif %}
+	{% endfor %}
+	</div>
 
-<p> Hello! Hui Wen is a software engineer. She works mostly on Front End development and cares a lot about building applications/UI that focuses on providing a great user experience. </p>
+	<div class="col col-second">
+	{% for post in site.posts %}
+		{% assign loopindex = forloop.index | modulo: 3 %}
+		{% if loopindex == 1 %}
+   			<div class="box">
+    			<a class="box-title" href="{{ post.url }}">
+    				<p> {{ post.title | upcase }} </p>
+    			</a>
+    			<p class="grey"> {{ post.excerpt | remove: '<p>' | remove: '</p>' }} </p>
+    			<a class="grey" href="{{ post.url }}"> Read more >> </a>
+			</div>
+	  	{% endif %}
+	{% endfor %}
+	</div>
 
-<p> Former: Software engineer at Fellow Robots and Upguard. </p>
-
-<p> Check out her <span><a href="{{ site.baseurl }}{% link resume.pdf %}" download>resume</a></span> and <span><a href="https://github.com/huiwenhw">projects</a></span>.</p>
-
-<p> Sometimes she  <span><a href="{% link posts.html %}">writes</a></span> too!</p>
+	<div class="col col-third">
+	{% for post in site.posts %}
+		{% assign loopindex = forloop.index | modulo: 3 %}
+		{% if loopindex == 2 %}
+		    <div class="box">
+    			<a class="box-title" href="{{ post.url }}">
+    				<p> {{ post.title | upcase }} </p>
+    			</a>
+				<p class="grey"> {{ post.excerpt | remove: '<p>' | remove: '</p>'  }} </p>
+    			<a class="grey" href="{{ post.url }}"> Read more >> </a>
+			</div>
+		{% endif %}
+	{% endfor %}
+	</div>
 </div>

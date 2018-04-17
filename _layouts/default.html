@@ -11,12 +11,16 @@
 		<link href="/css/syntax.css" rel="stylesheet" >
 		<title>Huiwen</title>
 	</head>
-	<body>
-		<div class="header">
-			<a href="/" id="logo"><h1> Hui Wen </h1></a>
-		</div>
+	<body class="main-container">
+		<nav class="header">
+			<a href="/" class="left">Hui Wen</a>
+			<a class="right" href="https://github.com/huiwenhw" target="_blank"> projects</a>
+			<a class="right" href="{{ site.baseurl }}{% link resume.pdf %}" download target="_blank">resume</a>
+			<a class="right" href="/">blog</a>
+		</nav> 
 
-		<div class="main-container">
+		<div class="content">
+			<hr>
 			{{ content }} 
 		</div>
 

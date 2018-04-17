@@ -8,9 +8,6 @@ layout: default
 		<tr>
 			<td class="dates">{{ post.date | date: '%d-%m-%Y' }}</td>
 			<td><a href="{{ post.url }}"><span>{{ post.title }}</span></a></td>
-			<!--
-			<p class="postexcerpt"> {{ post.excerpt | remove: '<p>' | remove: '</p>'}} </p>
-			-->
 		</tr>
 		{% endfor %}
 	</table>
