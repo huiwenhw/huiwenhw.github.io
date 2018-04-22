@@ -24,7 +24,7 @@ inner-div {
 }
 ```
 
-<div class="parent" class="parent-two">
+<div class="parent parent-two">
 	<div>
 		Second method: Using flexbox
 	</div>

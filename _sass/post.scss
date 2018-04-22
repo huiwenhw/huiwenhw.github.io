@@ -49,3 +49,29 @@
 	@include triangle-right();
     right: -15px;
 }
+
+/* * CENTERING POST */
+.post-content {
+  .parent {
+    background: black;
+    height: 100px;
+    position: relative;
+    div {
+      color: white;
+      position: absolute;
+      border: 1px solid white;
+      width: 300px;
+      text-align: center;
+    }
+  }
+  .child-one {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .parent-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

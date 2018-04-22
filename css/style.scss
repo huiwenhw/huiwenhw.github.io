@@ -40,7 +40,6 @@ html {
 }
 p {
   margin: 10px 0px;
-  text-align: center;
 }
 blockquote {
   overflow: scroll;
@@ -58,6 +57,9 @@ a {
   &:focus {
     outline: none;
   }
+}
+img {
+	width: 100%;
 }
 .main-container {
   max-width: 1200px;
@@ -190,24 +192,17 @@ a {
   margin: auto;
 }
 .post-header {
-  color: #0abab5;
-  h4 {
-    margin-bottom: 30px;
-  }
-  .date {
-    float: left;
-  }
-  .back {
-    float: right;
-    a {
-      color: #0abab5;
-    }
+  letter-spacing: 1px;
+
+  .post-title {
+	color: #0abab5;
   }
 }
 .post-content {
   font-family: "ptsans";
   font-weight: 100;
   clear: both;
+  margin-top: 30px;
 }
 @media (max-width: 580px) {
   .post-header {
@@ -217,30 +212,5 @@ a {
     h4 {
       font-size: 15px;
     }
-  }
-}
-/* * CENTERING POST */
-.post-content {
-  .parent {
-    background: black;
-    height: 100px;
-    position: relative;
-    div {
-      color: white;
-      position: absolute;
-      border: 1px solid white;
-      width: 300px;
-      text-align: center;
-    }
-  }
-  .child-one {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .parent-two {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
