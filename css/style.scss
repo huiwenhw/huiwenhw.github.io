@@ -36,7 +36,7 @@ $tiffany: #0abab5;
 body,
 html {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 200;
 }
 p {
   margin: 10px 0px;
@@ -109,6 +109,9 @@ img {
 .intro {
   text-align: center;
   font-style: italic;
+  p {
+	line-height: 1;
+  }
 }
 .col {
   margin: 20px;
@@ -140,7 +143,8 @@ img {
     margin-bottom: 15px;
     letter-spacing: 1px;
   }
-} /* * Small devices */
+} 
+/* * Small devices */
 @media (max-width: 768px) {
   blockquote {
     font-size: 13px;
