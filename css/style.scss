@@ -5,18 +5,7 @@
 $lightgrey: #8c8c8c;
 $darkgrey: #666;
 $tiffany: #0abab5;
-@font-face {
-  font-family: "Roboto";
-  src: url("fonts/Roboto-Thin-webfont.eot");
-  src: url("fonts/Roboto-Thin-webfont.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Roboto-Thin-webfont.woff") format("woff"),
-    url("fonts/Roboto-Thin-webfont.ttf") format("truetype"),
-    url("fonts/Roboto-Thin-webfont.svg#RobotoThin") format("svg");
-}
-@font-face {
-  font-family: "zillaslab";
-  src: url("fonts/ZillaSlab-Regular.ttf") format("truetype");
-}
+
 @font-face {
   font-family: "opensans";
   src: url("fonts/OpenSans-Regular.ttf") format("truetype");
@@ -25,17 +14,10 @@ $tiffany: #0abab5;
   font-family: "ptsans";
   src: url("fonts/PT_Sans-Web-Regular.ttf") format("truetype");
 }
-@font-face {
-  font-family: "GreatVibes";
-  src: url("fonts/GreatVibes-Regular.woff2") format("woff2"),
-    url("fonts/GreatVibes-Regular.ttf") format("truetype"),
-    url("fonts/GreatVibes-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-} /* * Common styles */
+/* * Common styles */
 body,
 html {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "ptsans", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
 }
 p {
@@ -48,7 +30,7 @@ figure {
   text-align: center;
 }
 a {
-  color: black;
+  color: $tiffany;
   text-decoration: none;
   &:hover {
     color: $tiffany;
