@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css" />
 	<link href="/css/syntax.css" rel="stylesheet">
 	<title>Huiwen</title>
+	{% if jekyll.environment == 'production' %}
+		{% include analytics.html %}
+	{% endif %}
 </head>
 
 <body class="main-container">
