@@ -6,7 +6,10 @@ category: normal
 
 End result:
 <figure>
-<img src="/../images/calendar_v1.0.png" alt="Image of calendar"/>
+<img src="/../images/calendar_v2.0.png" alt="Image of calendar part two"/>
+</figure>
+<figure>
+<img src="/../images/calendar_v2.0_form_edit.png" alt="Image of calendar part two"/>
 </figure>
 
 
@@ -34,6 +37,8 @@ python3 manage.py startapp cal
 
 In cal/views.py, create a index view:
 ```python
+# cal/views.py
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -45,6 +50,8 @@ def index(request):
 
 and in cal/urls.py, add the view we just created:  
 ```python
+# cal/urls.py
+
 from django.conf.urls import url
 from . import views
 
@@ -56,6 +63,8 @@ urlpatterns = [
 
 To make the cal app work, we need to include the urls specified there in the djangocalendar/urls.py file:
 ```python
+# djangocalendar/urls.py
+
 from django.contrib import admin
 from django.urls import path, include
 
@@ -73,6 +82,8 @@ python3 manage.py runserver
 
 Here comes the fun part! In a calendar app, we would want to see our events for the day, what time does it start, end and what the event is about. We can start by declaring the Event model in cal/models.py:
 ```python
+# cal/models.py
+
 from django.db import models
 
 class Event(models.Model):
@@ -84,6 +95,8 @@ class Event(models.Model):
 
 This means that an event needs to have a title (not more than 200 chars in length), a description field, start time and end time. We then register it in cal/admin.py so that we can add events through the admin interface:
 ```python
+# cal/admin.py
+
 from django.contrib import admin
 from cal.models import Event
 
@@ -97,10 +110,12 @@ python manage.py createsuperuser
 
 Follow the prompts and when you're done, head on to [http://localhost:8000/admin/](http://localhost:8000/admin/). Try adding an event to see what happens!  
 
-Now that we've got the event model set up, let's jump into creating the calendar. We will be inheriting the HTMLCalendar class in Python. What this means is that our Calendar class will have all of HTMLCalendar's attributes and methods, but we can also override its methods if we want to.  
+Now that we've got the event model set up, let's jump into creating the calendar. We will be inheriting the HTMLCalendar class in Python in cal/utils.py. What this means is that our Calendar class will have all of HTMLCalendar's attributes and methods, but we can also override its methods if we want to.  
 
 For our calendar class, we override the formatday, formatweek and formatmonth methods:
 ```python
+# cal/utils.py
+
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
 from .models import Event
@@ -145,6 +160,8 @@ class Calendar(HTMLCalendar):
 
 We can then use the Calendar class that we created in cal/views.py:
 ```python
+# cal/views.py
+
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -179,8 +196,10 @@ def get_date(req_day):
     return datetime.today()
 ```
 
-We can then use this calendar variables in our templates. Create a base template in cal/templates/cal/base.html:
+Note that we're calling the formatmonth method in Calendar class. This returns us a calendar month as a table in html. We can then use this calendar variable in our templates. First, create a base template in cal/templates/cal/base.html:
 ```html
+<!-- cal/templates/cal/base.html -->
+
 {'% load staticfiles %}
 <!doctype html>
 <html lang="en">
@@ -190,10 +209,8 @@ We can then use this calendar variables in our templates. Create a base template
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
   <link rel="stylesheet" type="text/css" href="{'% static 'cal/css/styles.css' %}">
   <title>Django Calendar App</title>
 </head>
@@ -219,6 +236,8 @@ We can then use this calendar variables in our templates. Create a base template
 
 and in cal/templates/cal/calendar.html, we just need to extend base.html and render the calendar variable:
 ```html
+<!-- cal/templates/cal/calendar.html -->
+
 {'% extends 'cal/base.html' %}
 
 {'% block content %}
@@ -240,29 +259,32 @@ urlpatterns = [
 
 You should be able to view the calendar at [http://localhost:8000/calendar/](http://localhost:8000/calendar/) now! For the last part, we add a little bit of css to make it a full blown calendar:
 ```css
+/* cal/static/cal/css/styles.css */
+
 .calendar {
-  width: 100%;
+  width: 98%;
+  margin: auto;
   font-size: 13px;
 }
 
-.month {
-  font-size: 25px;
-}
-
-tr, td {
+.calendar tr, .calendar td {
   border: 1px solid black;
 }
 
-th {
+.calendar th {
   padding: 10px;
   text-align: center;
   font-size: 18px;
 }
 
-td {
+.calendar td {
   width: 200px;
   height: 150px;
   padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
 }
 
 .date {
@@ -284,3 +306,4 @@ It should look something like this:
 <img src="/../images/calendar_v1.0.png" alt="Image of calendar"/>
 </figure>
 
+Head over to [Django Calendar Part II]({% post_url 2018-07-29-django-calendar-ii %}) for adding prev/next month button and for creating events through the app :)
